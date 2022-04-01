@@ -92,22 +92,22 @@ app.get('/add',(req,res)=>{
 });
 
 
-// app.post('/add',(req,res)=>{
-//   let empid=req.body.empid
-//   let empname=req.body.name;
-//   let jobcode=req.body.job_code;
-//   let rm=req.body.rm;
-//   let ready=req.body.ready;
-//   let java=req.body.java;
-//   let cpp=req.body.cpp;
+app.post('/add',(req,res)=>{
+  let empid=req.body.empid
+  let empname=req.body.name;
+  let jobcode=req.body.job_code;
+  let rm=req.body.rm;
+  let ready=req.body.ready;
+  let java=req.body.java;
+  let cpp=req.body.cpp;
   
-//   console.log(empid);
+  console.log(empid);
 
-//     db.all(`INSERT INTO adobe.panel_members(emp_id,emp_name,job_code,rm,ready,java,cpp) VALUES (${empid},'${empname}','${jobcode}','${rm}','${ready}','${java}','${cpp}');`, [],(err,result,field) => {
-//     if(err) throw err;  
-//     res.redirect('/excel')
-//   });
+    db.all(`INSERT INTO adobe.panel_members(emp_id,emp_name,job_code,rm,ready,java,cpp) VALUES (${empid},'${empname}','${jobcode}','${rm}','${ready}','${java}','${cpp}');`, [],(err,result,field) => {
+    if(err) throw err;  
+    res.redirect('/excel')
+  });
 
-// });
+});
 
 app.listen(port, () => console.log(`This app is listening on http://${hostname}:${port}`));
