@@ -78,4 +78,17 @@ app.post('/edit',(req,res)=>{
 
 });
 
+app.get('/delete',(req,res)=>{
+  let empid=req.query.emp_id;
+  db.all(`Delete FROM panel_members WHERE emp_id=${empid};`,[], (err,result,field) => {
+    if(err) throw err;
+    res.redirect('/excel')
+  });
+});
+
+
+app.get('/add',(req,res)=>{
+  res.sendFile(__dirname + '/static/add.html');
+});
+
 app.listen(port, () => console.log(`This app is listening on http://${hostname}:${port}`));
