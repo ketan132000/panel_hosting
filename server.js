@@ -31,10 +31,11 @@ app.post('/', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
     console.log(username,password);
-    if(username!="ketanchawla2000@gmail.com" && password!="mN2bFn@1"){
-      res.sendFile(__dirname + '/static/invalid.html');
+    if(username=="ketanchawla2000@gmail.com" && password=="mN2bFn@1"){
+       res.redirect('/ketan');
     }
-    res.redirect('/ketan');
+    res.sendFile(__dirname + '/static/invalid.html');
+    
 });
 
 app.get('/ketan',(req,res)=>{
