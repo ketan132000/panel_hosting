@@ -1,0 +1,114 @@
+.col-xl-10{
+  top: -40px;
+  position:relative;
+}
+.row{
+  margin-top: 0px;
+}
+
+.gradient-custom-2 {
+  background: rgb(16, 160, 226);
+  background: -webkit-linear-gradient(to right, rgb(38, 112, 196), #e0dcdf);
+  background: linear-gradient(to right, rgb(38, 112, 196));
+}
+
+@media (min-width: 768px) {
+  .gradient-form {
+    height: 100%;
+  }
+}
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+    border-top-right-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+  }
+}
+
+.form-outline{
+    text-align: center;
+    font-weight: bold;
+}
+
+#text-p{
+    font-weight:500;
+}
+
+@media (min-width: 992px){}
+.container, .container-lg, .container-md, .container-sm {
+    max-width: 960px;
+    margin-top: 50px;
+}
+@media (min-width: 768px){}
+.container, .container-md, .container-sm {
+    max-width: 720px;
+}
+@media (min-width: 576px){}
+.container, .container-sm {
+    max-width: 540px;
+    margin-top: 180px;
+}
+
+.container{
+  margin-top: 100px;
+}
+
+.form-label{
+  color: #f00408;
+  font-size: small;
+}
+
+
+.table{
+  text-align: center;
+  /* padding-left: 10px; */
+}
+
+
+
+#head{
+  font-size: large;
+}
+
+#edit{
+  color:whitesmoke;
+  text-decoration: none;
+}
+
+#delete{
+  color:whitesmoke;
+  text-decoration: none;
+}
+
+.icon{
+  text-align: right;
+  margin-right: 35px;
+  font-size: 30px;
+  color: #000;
+}
+
+
+a,a:hover{
+  color: whitesmoke;
+}
+.navv{
+  background-color: #e74f51;
+  color:whitesmoke;
+}
+.nav-link{
+  color: whitesmoke;
+}
+.nav-link:hover{
+  color: whitesmoke;
+}
+.nav-link:active{
+  color: whitesmoke;
+}
+.nav-link[tabindex]:focus{
+  color: whitesmoke;
+}
+.table-responsive{
+  margin-top: 200px;
+}
+
+
+

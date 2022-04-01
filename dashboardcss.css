@@ -1,0 +1,132 @@
+.vertical-nav {
+    min-width: 17rem;
+    width: 19rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+    padding: 20px;
+  }
+  
+  .nav-item{
+    
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .nav-link{
+    color:#000;
+  }
+  
+  
+  .nav-item:hover{
+    background-color: #cfcfd1;
+  }
+  
+  
+  
+  
+  .page-content {
+    width: calc(100% - 17rem);
+    margin-left: 19.5rem;
+    transition: all 0.4s;
+  }
+  
+  /* for toggle behavior */
+  
+  #sidebar.active {
+    /* background-color: black; */
+    margin-left: -19rem;
+  }
+  
+  #content.active {
+    width: 100%;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -17rem;
+    }
+    #sidebar.active {
+      margin-left: 0;
+    }
+    #content {
+      width: 100%;
+      margin: 0;
+    }
+    #content.active {
+      margin-left: 17rem;
+      width: calc(100% - 17rem);
+    }
+  }
+  
+  
+  
+  body {
+    /* background: rgb(212, 197, 197); */
+    /* background: #011d16;
+    background: -webkit-linear-gradient(to right, #214742, #c2e59c); 
+    background: linear-gradient(to right, teal, coral);  */
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+  }
+  
+  .text-uppercase {
+    letter-spacing: 0.1em;
+  }
+  
+  .text-gray {
+    color: #aaa;
+  }
+  
+  .col{
+    text-align: center;
+  }
+  .btn{
+    margin-top: 1vh;
+  }
+
+  .card-body{
+      padding-top: 0.5rem;
+  }
+  .card{
+    background-color: rgb(248, 248, 248);
+    margin-top: 2rem;
+    border: 1px solid #eee;  /* JUST TO LOOK COOL */
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+    transition: all .3s ease-in-out;
+    color: rgb(138, 115, 115);
+    height: 30vh;
+    /* transition: all .3s ease-in-out; */
+  }
+  .card:hover {
+    background-color: #557fd4;
+    box-shadow: rgba(14, 13, 13, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -7px, 0px);
+    color: #eee;
+  }
+  .card-title{
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+  .card-text{
+    font-size: 6rem;
+  }
+  .w-100{
+    width: 10px;
+    height: 50vh;
+  }
+  #searchbtn{
+    margin-top: 0;
+    /* padding-left: 2px; */
+    margin-right: 2.2rem;
+  }
+  

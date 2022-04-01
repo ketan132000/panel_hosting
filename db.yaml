@@ -1,0 +1,6 @@
+const con = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: "mN2bFn@1", // User's password
+    datasbase:'adobe'
+  });

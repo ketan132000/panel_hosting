@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Optimizer</title>
+  
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+
+
+
+
+</head>
+<body>
+    <section class="h-100 gradient-form" style="background-color:#fff; display: block; height: 100vh; width: 100%;  ">
+        <div class="container py-5 ">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black borderout">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="card-body p-md-5 mx-md-4">
+      
+                      <div class="text-center">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAkFBMVEX///8ujd45m+Q4meNKqegti947neQsit1Ip+gYhNwwkeCtzfA+oeZMqugulOGAvOx6tepTr+q83Pbd7fr1+v6azPHQ4vbn8fschtzz+P2ky/DK4/fs9fzU6fmVyPA8o+e20/GNuuoAgNuXwOxcoeNNmuJvr+gikeFbqOaw1POIwO50t+y12fWi0PJmtevK5Pe+9zuaAAADUklEQVR4nO3ZW3eiMBSGYQFFdIAqeECpg9pWalvt//93o3LUUsBZ0qzG97mTlYudz52EQ6sFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADuweRPueXEFV1iw1xl3au07q8mogttznTtdevwet7TTHSxDXnudmo6xLAaiS63CY+9uhEceV1HdMENWFyVQaezHoiu+PbcnnJVBor3It+uoFyr238UXfOtzXvXhyBdJwyuDkF5EV3zzTnPdr9Up+d1zzLwJNwYq4wmT33vLAQZj8hqjt1VstZQpLxZqvbk5ZbHSnQ1gvidLARPugOypkkWgnKvjdBadrMQRNcizECxY8p9Hg1HYT/OoL8RXYow8zBphFB0KcKMsgwWomtpwMyfrwZF5vlnpEGawVZYpU3xN2H6F18Iw9z+twy1iP0mrthGTF+TqRXK9f00HSjZprgM7bIINPs1G5tmYIqrtwHz0iY4hZDdGuvJNVVgxTe3DdUq9jQdbWrRJakycKsjUM/6IM5AF1jzrZmqXkXL7Qd2fE01xJV8a1u7dPondu5cSDOQ6Fwwc3MtXgialrs/cLRkrDz3B75qJnRt81Bkl39f8q7Ho1V57hPfkjmZ6qbGu6GRmozX5HleCNIuqLW+d1lkTVf2Y0bpUlBrvSFMIzDfmy7tx0z1IGLu6wx/M+PhgS7PeyQ3zeBvjdFOMjowJbpDuiqDRRpBvch+iWsy8NOFcFgKEn17dnUjUp3BWA8Mo/boXyTNIKiYlW+ZaQJGYMj0vdFNZhaMvx80W4wtM2uCQxv4P1dh87IMzvpgO8zN2AgOG8HZb3keFY7cZHL5PhgNz6b8xVBcvU3IMsj1wXtpBEFbps2gdcygHTGyPpgm1woZlkTH4klRBh9GWQR7ybqgOINtSQaSbYcnbmBFchn4ybVLbaMt1aEYK+qD0XfLwBhLtw6OXCP5j3Nno/O1EQ6rYLiTbTOMFWbQctoXx6GxH8vz6uxScQat0aeT8+lKuQYS32RwV9z2MHLPGdAHWR9YO9GlCEMGZHBEBmRw5FpxBkMyuOcMZmkG8nw/vNpDsh9I+lBYx2PUCNaH6EJEmu6toXXfERy4zqfUz8YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOD//QN8glUvhfgU/AAAAABJRU5ErkJggg==" style="width: 150px;" alt="logo">
+                        <h3 class="mt-1 mb-5 pb-1">Panel Optimizer</h3>
+                      </div>
+                      <form method="POST" action="/">
+                        <p id="text-p">Please login to your account</p>
+      
+                        <div class="form-outline mb-4">
+                          <input type="email" id="form2Example11" class="form-control" placeholder="Enter email address" name="username"/>
+                          
+                        </div>
+      
+                        <div class="form-outline mb-4">
+                          <input type="password" id="form2Example22" class="form-control" placeholder="Password" name="password" />
+                          <!-- <label class="form-label" for="form2Example22">Password</label> -->
+                          <label class="form-label" for="form2Example11">Invalid Username or Password*</label>
+                        </div>
+      
+                        <div class="text-center pt-1 mb-5 pb-1">
+                          <button class="btn btn-dark btn-sm btn-block fa-lg mb-3" value="login" type="submit">Log in</button>
+                          <br>
+                          <a class="text-muted" href="#">Forgot password?</a>
+                        </div>
+      
+                        <div class="d-flex align-items-center justify-content-center pb-4">
+                          <p class="mb-0 me-2">Don't have an account?</p>
+                          <button type="button" class="btn btn-outline-dark">Create new</button>
+                        </div>
+      
+                      </form>
+      
+                    </div>
+                  </div>
+                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                      <h4 class="mb-4">We are more than just a company</h4>
+                      <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
+</html>

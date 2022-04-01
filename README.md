@@ -1,1 +1,1 @@
-# panel_hosting
+# Host
