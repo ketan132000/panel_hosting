@@ -103,7 +103,7 @@ app.post('/add',(req,res)=>{
   
   console.log(empid);
 
-    db.all(`INSERT INTO adobe.panel_members(emp_id,emp_name,job_code,rm,ready,java,cpp) VALUES (${empid},'${empname}','${jobcode}','${rm}','${ready}','${java}','${cpp}');`, [],(err,result,field) => {
+    db.all(`INSERT INTO panel_members(emp_id,emp_name,job_code,rm,ready,java,cpp) VALUES (${empid},'${empname}','${jobcode}','${rm}','${ready}','${java}','${cpp}');`, [],(err,result,field) => {
     if(err) throw err;  
     res.redirect('/excel')
   });
