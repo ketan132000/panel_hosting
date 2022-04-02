@@ -9,39 +9,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
-    <form method="POST" action="/add">
+
+  <h2 style="text-align: center; margin-top: 1rem;">ENTER PANELIST DETAILS</h2>
+
+    <form method="POST" action="/add" class="form-control" style="margin-left:20rem; width: 60%; margin-top: 2rem; font-size: 20px; border: none;">
+      <!-- <label style="color: red; margin-left:33.5rem; font-size: 25px;">FILL ALL FIELDS</label> -->
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Employee Id</label>
+          <label for="exampleInputEmail1" class="form-label">Employee Id</label> <label style="color: red;">* (Unique)</label>
           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="empid">
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Employee Name</label>
+            <label for="exampleInputEmail1" class="form-label">Employee Name</label><label style="color: red;">*</label>
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="name">
     
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Job Code</label>
+            <label for="exampleInputEmail1" class="form-label">Job Code</label><label style="color: red;">*</label>
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="job_code">
             
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">RM</label>
+            <label for="exampleInputEmail1" class="form-label">RM</label><label style="color: red;">*</label>
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="rm">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Readiness</label>
+            <label for="exampleInputEmail1" class="form-label">Readiness</label><label style="color: red;">* (Y/N)</label>
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="ready">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Java</label>
+            <label for="exampleInputEmail1" class="form-label">Java </label><label style="color: red;">* (Y/N)</label>
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="java">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">C++</label>
+            <label for="exampleInputEmail1" class="form-label">C++ </label><label style="color: red;">* (Y/N)</label>
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="cpp">
           </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" style="margin-left:30rem;">Submit</button>
+        
       </form>
+     
 </body>
 </html>

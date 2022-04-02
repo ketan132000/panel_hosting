@@ -19,6 +19,10 @@ let db = new sqlite3.Database('./db/adobe.db', sqlite3.OPEN_READWRITE, (err,resu
 
 
 
+
+
+
+
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname));
@@ -47,7 +51,7 @@ app.get('/excel', function (req, res) {
   console.log(req.body)
   db.all(`SELECT * FROM panel_members;`,[],(err,result,field) => {
     if(err) throw err;
-    console.log(result);
+    // console.log(result);
     res.render('excel.ejs', {details:result});
   });
 });
@@ -107,6 +111,113 @@ app.post('/add',(req,res)=>{
     db.all(`INSERT INTO panel_members(emp_id,emp_name,job_code,rm,ready,java,cpp) VALUES (${empid},'${empname}','${jobcode}','${rm}','${ready}','${java}','${cpp}');`, [],(err,result,field) => {
     if(err) throw err;  
     res.redirect('/excel')
+  });
+
+});
+
+
+
+app.get('/add_interview', function (req, res) {
+  db.all(`SELECT * FROM panel_members;`,[],(err,result1,field) => {
+    if(err) throw err;
+    // console.log(result1);
+    db.all('SELECT * FROM  month;',[], (err,result2,field) => {
+      if(err) throw err;
+        console.log(result2[0].val);
+        let month=result2[0].val;
+        let month2=month;
+        month=month.replace('-','_');
+        console.log(month);
+        const tableColumns = [];
+      const columns = ["month_"+month+"_a", "month_"+month+"_d"];
+      // console.log(columns);
+      db.all(`PRAGMA table_info(panel_members);`, [],(err,result,field) => {
+        if(err) throw err; 
+
+        // console.log(result)
+        
+        result.forEach(i => {
+          tableColumns.push(i.name);
+        });
+      // console.log(tableColumns);
+      columns.forEach(col => {
+        if(!tableColumns.includes(col)){
+          db.all(`ALTER TABLE panel_members ADD ${col} int DEFAULT 0;`,[], (err,result,field) => {
+            if(err) throw err;  
+          });
+        }
+        });
+        let month_name=['January','Feburary','March','April','May','June','July','August','September','October','November','December'];
+      let month_num=month.substring(5,7);
+
+      return res.render('interview.ejs', {details:result1, months:columns,current_month:Number(month_num)-1, val:month2});
+    });
+    
+  });
+});
+});
+
+
+
+app.post('/add_interview',(req,res)=>{
+  let date=req.body.date;
+  let empid=req.body.empid;
+  
+
+  date=date.substring(0,4)+'_'+date.substring(5,7)+'_'+date.substring(8,10);
+  // console.log(date);
+  const tableColumns = []
+  const newtableColumns = []
+
+  const columns = ["day_"+date+"_a", "day_"+date+"_d", "month_"+date.substring(0, 7)+"_a", "month_"+date.substring(0, 7)+"_d"]
+  // console.log(columns);
+
+  db.all(`PRAGMA table_info(panel_members);`,[], (err,result,field) => {
+    if(err) throw err; 
+    
+    result.forEach(i => {
+      tableColumns.push(i.name);
+    });
+  
+    columns.forEach(col => {
+      if(tableColumns.includes(col)){
+        // console.log("already existed");
+      }
+      else{
+        // console.log("adding column");
+        db.run(`ALTER TABLE panel_members ADD ${col} int DEFAULT 0;`,(err) => {
+          if(err) throw err;  
+          // console.log(result);
+        });
+      }
+    });
+
+    // console.log(columns);
+    // console.log(tableColumns);
+    if(req.body.hasOwnProperty("add")){
+      db.all(`UPDATE panel_members SET ${columns[0]}=${columns[0]}+1, ${columns[2]}=${columns[2]}+1 where emp_id=${empid};`,[], (err,result,field) => {
+        if(err) throw err; 
+        res.redirect('/add_interview');
+      });
+    }
+    else{
+      db.all(`UPDATE panel_members SET ${columns[0]}=${columns[0]}-1, ${columns[2]}=${columns[2]}-1, ${columns[1]}=${columns[1]}+1, ${columns[3]}=${columns[3]}+1 where emp_id=${empid};`,[], (err,result,field) => {
+        if(err) throw err; 
+        res.redirect('/add_interview');
+      });
+    }
+  });
+});
+
+
+
+
+app.post('/date',(req,res)=>{
+  let month=req.body.month;
+  // console.log(month);
+  db.all(`UPDATE month SET val='${month}' where id=1 ;`,[], (err,result,field) => {
+    if(err) throw err;
+    res.redirect('/add_interview');
   });
 
 });
